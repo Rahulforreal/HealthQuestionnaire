@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Health Questionnaire</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="progress-bar">
+    <div class="progress" id="progress"></div>
+  </div>
+  <div class="container">
+    <!-- Page 1 -->
+    <div class="page active" id="page1">
+      <h2>Welcome to Health Check</h2>
+      <input type="text" id="name" placeholder="Enter your name" />
+      <button onclick="startVoiceInput('name')">🎤 Speak Name</button>
+      <input type="number" id="age" placeholder="Enter your age" />
+      <button onclick="goToPage2()">Next</button>
+    </div>
+
+    <!-- Page 2 -->
+    <div class="page" id="page2">
+      <h2>Select Your Symptoms (Severity)</h2>
+      <div class="symptom-group">
+        <label>Fever: <input type="range" min="0" max="10" class="slider" data-symptom="Fever"></label>
+        <label>Cough: <input type="range" min="0" max="10" class="slider" data-symptom="Cough"></label>
+        <label>Fatigue: <input type="range" min="0" max="10" class="slider" data-symptom="Fatigue"></label>
+        <label>Headache: <input type="range" min="0" max="10" class="slider" data-symptom="Headache"></label>
+        <label>Sore Throat: <input type="range" min="0" max="10" class="slider" data-symptom="Sore Throat"></label>
+        <label>Chest Pain: <input type="range" min="0" max="10" class="slider" data-symptom="Chest Pain"></label>
+        <label>Rash: <input type="range" min="0" max="10" class="slider" data-symptom="Rash"></label>
+      </div>
+      <button onclick="goToPage3()">Next</button>
+    </div>
+
+    <!-- Page 3 -->
+    <div class="page" id="page3">
+      <h2>Your Health Suggestions</h2>
+      <div id="suggestions"></div>
+      <p style="color: red;">* Please consult a doctor before using any medication.</p>
+      <button onclick="goToPage4()">Consult a Doctor</button>
+    </div>
+
+    <!-- Page 4 -->
+    <div class="page" id="page4">
+      <h2>Doctor Appointment</h2>
+      <input type="text" id="contact" placeholder="Enter your phone number" />
+      <input type="date" id="date" />
+      <input type="time" id="time" />
+      <button onclick="goToPage5()">Confirm Appointment</button>
+    </div>
+
+    <!-- Page 5 -->
+    <div class="page" id="page5">
+      <h2>✅ Appointment Confirmed!</h2>
+      <p>Thank you, <span id="finalName"></span>!<br>Your appointment is set for <span id="finalDate"></span> at <span id="finalTime"></span>.</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

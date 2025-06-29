@@ -1,0 +1,64 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #8ec5fc, #e0c3fc);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  min-height: 100vh;
+}
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+h2 {
+  color: #444;
+  margin-bottom: 20px;
+}
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+.symptom-group label {
+  display: block;
+  margin: 8px 0;
+}
+button {
+  background: #6c63ff;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+button:hover {
+  background: #574fd6;
+}
+.page {
+  display: none;
+}
+.page.active {
+  display: block;
+}
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #eee;
+  border-radius: 4px;
+}
+.progress {
+  height: 100%;
+  width: 10%;
+  background: #6c63ff;
+  border-radius: 4px;
+  transition: width 0.3s ease-in-out;
+}
